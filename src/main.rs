@@ -118,11 +118,11 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                 print!("{}, ", category.0);
             }
             let genres: Vec<Value> = serde_json::from_value(game_details["genres"].clone())?;
-            println!("Genres:");
+            println!("\nGenres:");
             for genre in genre_value_to_vec(&genres).expect("Failed to convert value to vec!(genre)") {
                 print!("{}, ", genre.0);
             }
-            println!("Game description: {}", game_description);
+            println!("\nGame description: {}", game_description);
             let package_groups: Vec<Value> = serde_json::from_value(game_details["package_groups"].clone())?;
             println!("Package Groups:");
             for packet in packet_value_to_vec(&package_groups).expect("Failed to convert value to vec!(package_groups)") {
